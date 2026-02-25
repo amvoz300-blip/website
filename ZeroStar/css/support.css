@@ -1,0 +1,264 @@
+/* ================= RESET ================= */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html, body {
+  width: 100%;
+  overflow-x: hidden; /* 🔥 mobile overflow fix */
+}
+
+body {
+  background: #000;
+  color: #fff;
+  font-family: 'Inter', sans-serif;
+}
+
+/* ================= NAVBAR ================= */
+.navbar {
+  height: 64px;
+  padding: 0 28px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  border-bottom: 1px solid rgba(138,108,255,0.35);
+  background: #000;
+  position: sticky;
+  top: 0;
+  z-index: 100;
+}
+
+.nav-left {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.nav-logo {
+  width: 22px;
+}
+
+.nav-title {
+  font-size: 15px;
+  font-weight: 600;
+  letter-spacing: 1px;
+}
+
+/* NAV LINKS (DESKTOP) */
+.nav-links {
+  display: flex;
+  align-items: center;
+}
+
+.nav-links a {
+  margin-left: 22px;
+  text-decoration: none;
+  color: #bbb;
+  font-size: 14px;
+  position: relative;
+  padding-bottom: 6px;
+}
+
+.nav-links a::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 0%;
+  height: 2px;
+  background: #8a6cff;
+  transition: 0.3s ease;
+}
+
+.nav-links a:hover::after,
+.nav-links a.active::after {
+  width: 100%;
+}
+
+.nav-links a:hover {
+  color: #fff;
+  text-shadow: 0 0 12px rgba(138,108,255,0.9);
+}
+
+/* ================= HAMBURGER ================= */
+.hamburger {
+  display: none;
+  background: none;
+  border: none;
+  cursor: pointer;
+  flex-direction: column;
+  gap: 5px;
+}
+
+.hamburger span {
+  width: 22px;
+  height: 2px;
+  background: #fff;
+  border-radius: 2px;
+}
+
+/* ================= HERO ================= */
+.hero {
+  padding: 90px 20px 40px;
+  max-width: 900px;
+  margin: auto;
+}
+
+.hero h1 {
+  font-size: 44px;
+  margin-bottom: 10px;
+}
+
+.hero p {
+  color: #bbb;
+  font-size: 15px;
+  line-height: 1.6;
+}
+
+/* ================= SUPPORT ================= */
+.support-wrapper {
+  max-width: 900px;
+  margin: auto;
+  padding: 30px 16px 80px;
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+  width: 100%;
+}
+
+/* SUPPORT ROW */
+.support-line {
+  width: 100%;
+  display: flex;
+  align-items: flex-start;
+  gap: 18px;
+  padding: 20px 16px;
+  border-bottom: 1px solid rgba(138,108,255,0.25);
+  transition: background 0.25s ease, box-shadow 0.25s ease;
+}
+
+.support-line:hover,
+.support-line:active {
+  background: rgba(138,108,255,0.06);
+  box-shadow:
+    inset 3px 0 0 #8a6cff,
+    0 0 14px rgba(138,108,255,0.25);
+}
+
+/* number */
+.support-num {
+  flex-shrink: 0;
+  width: 36px;
+  font-size: 14px;
+  font-weight: 600;
+  color: rgba(138,108,255,0.9);
+  margin-top: 2px;
+}
+
+/* content */
+.support-content {
+  flex: 1;
+  width: 100%;
+}
+
+.support-content h3 {
+  font-size: 16px;
+  margin-bottom: 6px;
+}
+
+.support-content p {
+  font-size: 14px;
+  color: #ccc;
+  margin-bottom: 12px;
+  line-height: 1.6;
+}
+
+/* ================= BUTTON ================= */
+.support-btn {
+  display: inline-block;
+  padding: 10px 22px;
+  border-radius: 24px;
+  border: 1px solid #8a6cff;
+  color: #fff;
+  text-decoration: none;
+  font-size: 13px;
+  font-weight: 600;
+  transition: background 0.25s ease, box-shadow 0.25s ease;
+}
+
+.support-btn:hover,
+.support-btn:active {
+  background: #8a6cff;
+  box-shadow:
+    0 0 10px rgba(138,108,255,0.7),
+    0 0 24px rgba(138,108,255,1);
+}
+
+/* dual buttons */
+.dual-btn {
+  display: flex;
+  gap: 10px;
+  flex-wrap: wrap;
+}
+
+/* ================= MOBILE ================= */
+@media (max-width: 600px) {
+
+  /* show hamburger */
+  .hamburger {
+    display: flex;
+  }
+
+  /* hide nav by default */
+  .nav-links {
+    position: absolute;
+    top: 64px;
+    left: 0;
+    width: 100%;
+    background: #000;
+    display: none;
+    flex-direction: column;
+    padding: 14px 18px;
+    border-bottom: 1px solid rgba(138,108,255,0.35);
+  }
+
+  /* when menu open */
+  .nav-links.active {
+    display: flex;
+  }
+
+  .nav-links a {
+    margin: 10px 0;
+    font-size: 14px;
+  }
+
+  .hero {
+    padding-top: 80px;
+  }
+
+  .hero h1 {
+    font-size: 34px;
+  }
+
+  .hero p {
+    font-size: 14px;
+  }
+
+  .support-line {
+    flex-direction: column;
+    gap: 10px;
+    padding: 18px 14px;
+  }
+
+  .support-btn {
+    width: 100%;
+    text-align: center;
+  }
+
+  .dual-btn {
+    flex-direction: column;
+  }
+}
+    

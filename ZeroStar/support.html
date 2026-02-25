@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>ZeroStar Support</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/support.css">
+</head>
+<body>
+
+<!-- ================= NAVBAR ================= -->
+<header class="navbar">
+  <div class="nav-left">
+    <img src="assets/images/logo.gif" class="nav-logo">
+    <span class="nav-title">ZEROSTAR</span>
+  </div>
+
+  <!-- HAMBURGER (MOBILE) -->
+  <button class="hamburger" id="hamburger" aria-label="Menu">
+    <span></span>
+    <span></span>
+    <span></span>
+  </button>
+
+  <nav class="nav-links" id="navLinks">
+    <a href="index.html">HOME</a>
+    <a href="premium.html">PREMIUM</a>
+    <a class="active">SUPPORT</a>
+  </nav>
+</header>
+
+<!-- ================= HERO ================= -->
+<section class="hero">
+  <h1>Support Center</h1>
+  <p>Get help, submit appeals, or contact the ZeroStar support team.</p>
+</section>
+
+<!-- ================= SUPPORT OPTIONS ================= -->
+<section class="support-wrapper">
+
+  <!-- Discord Support -->
+  <div class="support-line">
+    <span class="support-num">01</span>
+    <div class="support-content">
+      <h3>Discord Support</h3>
+      <p>Join our official Discord server for setup help and general support.</p>
+      <a href="https://discord.gg/YOURINVITE" target="_blank" class="support-btn">
+        Join Discord Server
+      </a>
+    </div>
+  </div>
+
+  <!-- ToS Support -->
+  <div class="support-line">
+    <span class="support-num">02</span>
+    <div class="support-content">
+      <h3>ToS Related Support</h3>
+      <p>Questions related to Terms of Service, privacy or legal matters.</p>
+      <a href="mailto:krish100431@gmail.com?subject=ToS Support Request&body=Please describe your issue clearly:%0D%0A%0D%0ADiscord Tag:%0D%0AServer ID:%0D%0ADetails:"
+         class="support-btn">
+        Email ToS Team
+      </a>
+    </div>
+  </div>
+
+  <!-- Ban Appeal -->
+  <div class="support-line">
+    <span class="support-num">03</span>
+    <div class="support-content">
+      <h3>Server Ban Appeal</h3>
+      <p>Appeal a server ban by contacting the review team.</p>
+      <a href="mailto:krish100431@gmail.com?subject=Server Ban Appeal&body=Ban Appeal Details:%0D%0A%0D%0AServer ID:%0D%0AOwner ID:%0D%0ABan Reason:%0D%0AExplanation:"
+         class="support-btn">
+        Submit Appeal
+      </a>
+    </div>
+  </div>
+
+  <!-- Premium Support -->
+  <div class="support-line premium">
+    <span class="support-num">04</span>
+    <div class="support-content">
+      <h3>Premium Support</h3>
+      <p>Priority support for Premium users with faster response times.</p>
+      <div class="dual-btn">
+        <a href="https://discord.gg/YOURINVITE" class="support-btn">Discord</a>
+        <a href="mailto:krish100431@gmail.com?subject=Premium Support Request&body=Premium Support:%0D%0A%0D%0ADiscord ID:%0D%0AServer ID:%0D%0AIssue:"
+           class="support-btn">
+          Email
+        </a>
+      </div>
+    </div>
+  </div>
+
+</section>
+
+<!-- ================= JS: HAMBURGER TOGGLE ================= -->
+<script>
+  const hamburger = document.getElementById("hamburger");
+  const navLinks = document.getElementById("navLinks");
+
+  hamburger.addEventListener("click", () => {
+    navLinks.classList.toggle("active");
+  });
+</script>
+
+</body>
+</html>
+    

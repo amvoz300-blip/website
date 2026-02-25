@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>ZeroStar Support Team Application</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/staff-form.css">
+</head>
+<body>
+
+<!-- ================= NAVBAR ================= -->
+<header class="navbar">
+  <div class="nav-left">
+    <img src="assets/images/logo.gif" class="nav-logo" alt="ZeroStar">
+    <span class="nav-title">ZeroStar</span>
+  </div>
+
+  <nav class="nav-links">
+    <a href="index.html">HOME</a>
+    <a class="active">STAFF FORM</a>
+  </nav>
+</header>
+
+<!-- ================= FORM ================= -->
+<main class="form-container">
+  <h1>ZeroStar Support Team Application</h1>
+
+  <form id="staffForm">
+
+    <div class="form-group">
+      <label>1. Name *</label>
+      <input type="text" name="name" required>
+    </div>
+
+    <div class="form-group">
+      <label>2. Age *</label>
+      <input type="number" name="age" required>
+    </div>
+
+    <div class="form-group">
+      <label>3. Gender *</label>
+      <input type="text" name="gender" required>
+    </div>
+
+    <div class="form-group">
+      <label>4. Nationality *</label>
+      <input type="text" name="nationality" required>
+    </div>
+
+    <div class="form-group">
+      <label>5. Class / Current Role *</label>
+      <input type="text" name="role" required>
+    </div>
+
+    <div class="form-group">
+      <label>6. Experience *</label>
+      <textarea name="experience" required></textarea>
+    </div>
+
+    <div class="form-group">
+      <label>7. Availability (hours + timezone) *</label>
+      <input type="text" name="availability" required>
+    </div>
+
+    <div class="form-group">
+      <label>8. Why ZeroStar? *</label>
+      <textarea name="why" required></textarea>
+    </div>
+
+    <p class="note">
+      ⚠ Applications generated using AI will be rejected.
+    </p>
+
+    <button type="submit">Submit Application</button>
+
+  </form>
+</main>
+
+<script src="js/staff-form.js"></script>
+</body>
+</html>

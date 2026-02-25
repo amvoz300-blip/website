@@ -1,0 +1,166 @@
+/* ================= RESET ================= */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html, body {
+  background: #000;
+  color: #fff;
+  font-family: 'Inter', sans-serif;
+}
+
+/* ================= NAVBAR ================= */
+.navbar {
+  height: 64px;
+  padding: 0 24px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  border-bottom: 1px solid rgba(255,255,255,0.08);
+}
+
+.nav-left {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.nav-logo {
+  width: 22px;
+}
+
+.nav-title {
+  font-size: 15px;
+  font-weight: 600;
+  position: relative;
+  padding-bottom: 6px;
+}
+
+.nav-title::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 0%;
+  height: 1.5px;
+  background: #8a6cff;
+  transition: width 0.25s ease;
+}
+
+.nav-title:hover::after {
+  width: 100%;
+}
+
+.nav-title:hover {
+  text-shadow: 0 0 10px rgba(138,108,255,0.8);
+}
+
+/* ================= HERO ================= */
+.hero {
+  padding: 100px 20px 50px;
+  max-width: 1100px;
+  margin: auto;
+  text-align: center;
+}
+
+.hero h1 {
+  font-size: 48px;
+  margin-bottom: 12px;
+  transition: text-shadow 0.25s ease;
+}
+
+/* Learn More glow */
+.hero h1:hover,
+.hero h1:active {
+  text-shadow:
+    0 0 10px rgba(138,108,255,0.6),
+    0 0 28px rgba(138,108,255,1);
+}
+
+.hero p {
+  color: #ccc;
+  font-size: 15px;
+  max-width: 520px;
+  margin: auto;
+}
+
+/* ================= FEATURE LIST ================= */
+/* ================= FEATURE DETAILS ================= */
+
+.feature-wrapper {
+  max-width: 900px;
+  margin: auto;
+  padding: 60px 20px 90px;
+}
+
+.section-title {
+  font-size: 32px;
+  font-weight: 700;
+  text-align: center;
+  margin-bottom: 8px;
+}
+
+.section-subtitle {
+  text-align: center;
+  color: #aaa;
+  font-size: 14px;
+  margin-bottom: 50px;
+}
+
+/* ================= FEATURE LINES ================= */
+
+.feature-lines {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.feature-line {
+  display: flex;
+  align-items: flex-start;
+  gap: 22px;
+  padding: 18px 6px;
+  border-bottom: 1px solid rgba(138,108,255,0.25);
+  transition: background 0.25s ease, box-shadow 0.25s ease;
+}
+
+/* number */
+.feature-num {
+  min-width: 34px;
+  font-size: 14px;
+  font-weight: 600;
+  color: rgba(138,108,255,0.85);
+}
+
+/* text */
+.feature-line p {
+  font-size: 15px;
+  line-height: 1.6;
+  color: #eaeaea;
+}
+
+/* hover / touch premium glow */
+.feature-line:hover,
+.feature-line:active {
+  background: rgba(138,108,255,0.06);
+  box-shadow:
+    inset 3px 0 0 #8a6cff,
+    0 0 14px rgba(138,108,255,0.25);
+}
+
+/* ================= MOBILE ================= */
+@media (max-width: 600px) {
+  .section-title {
+    font-size: 26px;
+  }
+
+  .feature-line {
+    padding: 16px 4px;
+  }
+
+  .feature-line p {
+    font-size: 14px;
+  }
+}

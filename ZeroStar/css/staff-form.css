@@ -1,0 +1,187 @@
+/* ================= RESET ================= */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html, body {
+  background: #000;
+  color: #fff;
+  font-family: 'Inter', sans-serif;
+}
+
+/* ================= NAVBAR ================= */
+.navbar {
+  height: 64px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 24px;
+  border-bottom: 1px solid rgba(255,255,255,0.08);
+}
+
+.nav-left {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.nav-logo {
+  width: 22px;
+}
+
+/* LOGO TEXT */
+.nav-title {
+  font-weight: 600;
+  font-size: 15px;
+  position: relative;
+  padding-bottom: 6px;
+  cursor: pointer;
+}
+
+/* NAV LINKS */
+.nav-links a {
+  margin-left: 18px;
+  text-decoration: none;
+  color: #bdbdbd;
+  font-size: 14px;
+  position: relative;
+  padding-bottom: 6px;
+}
+
+/* PURPLE LINE */
+.nav-title::after,
+.nav-links a::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 0%;
+  height: 1.5px;
+  background: #8a6cff;
+  transition: width 0.25s ease;
+}
+
+/* HOVER (PC) */
+.nav-title:hover::after,
+.nav-links a:hover::after {
+  width: 100%;
+}
+
+/* ACTIVE PAGE */
+.nav-links a.active::after {
+  width: 100%;
+}
+
+/* GLOW */
+.nav-title:hover,
+.nav-links a:hover {
+  text-shadow:
+    0 0 6px rgba(138,108,255,0.6),
+    0 0 12px rgba(138,108,255,0.8);
+}
+
+/* MOBILE TOUCH */
+@media (hover: none) {
+  .nav-title:active::after,
+  .nav-links a:active::after {
+    width: 100%;
+  }
+}
+
+/* ================= FORM ================= */
+.form-container {
+  max-width: 700px;
+  margin: 40px auto;
+  padding: 0 20px;
+}
+
+h1 {
+  margin-bottom: 30px;
+  font-size: 26px;
+}
+
+.form-group {
+  margin-bottom: 22px;
+}
+
+label {
+  display: block;
+  margin-bottom: 8px;
+  font-size: 14px;
+}
+
+/* INPUTS */
+input,
+textarea {
+  width: 100%;
+  padding: 14px;
+  background: #0b0b0b;
+  border: 1px solid rgba(255,255,255,0.15);
+  border-radius: 8px;
+  color: #fff;
+  outline: none;
+
+  transition:
+    border-color 0.25s ease,
+    box-shadow 0.25s ease;
+}
+
+textarea {
+  min-height: 120px;
+  resize: vertical;
+}
+
+/* FOCUS / FILLED → PURPLE */
+input:focus,
+textarea:focus,
+input.filled,
+textarea.filled {
+  border-color: #8a6cff;
+  box-shadow:
+    0 0 6px rgba(138,108,255,0.5),
+    0 0 14px rgba(138,108,255,0.8);
+}
+
+/* ERROR → RED */
+input.error,
+textarea.error {
+  border-color: #ff4d4d;
+  box-shadow:
+    0 0 6px rgba(255,77,77,0.6),
+    0 0 14px rgba(255,77,77,0.9);
+}
+
+/* NOTE */
+.note {
+  font-size: 13px;
+  color: #aaa;
+  margin: 25px 0;
+}
+
+/* SUBMIT BUTTON */
+button {
+  width: 100%;
+  padding: 14px;
+  border-radius: 30px;
+  border: none;
+  background: #8a6cff;
+  color: #fff;
+  font-weight: 600;
+  cursor: pointer;
+  transition: box-shadow 0.25s ease;
+}
+
+button:hover {
+  box-shadow:
+    0 0 12px rgba(138,108,255,0.7),
+    0 0 26px rgba(138,108,255,1);
+}
+
+/* ================= MOBILE ================= */
+@media (max-width: 480px) {
+  h1 {
+    font-size: 22px;
+  }
+}

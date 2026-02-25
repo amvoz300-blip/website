@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>ZeroStar • Live Stats</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@500;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/stats.css">
+</head>
+<body>
+
+<!-- NAVBAR -->
+<header class="navbar">
+  <div class="nav-left">
+    <img src="assets/images/logo.gif" class="nav-logo">
+    <span class="nav-title">ZEROSTAR</span>
+  </div>
+
+  <nav class="nav-links">
+    <a href="index.html">HOME</a>
+    <a class="active">STATS</a>
+  </nav>
+</header>
+
+<!-- HERO -->
+<section class="stats-hero">
+  <h1>Live Statistics</h1>
+  <p>Real-time insights powered by ZeroStar</p>
+</section>
+
+<!-- GRAPH CARD -->
+<section class="graph-card">
+  <div class="graph-header">
+    <div class="graph-title">
+      <img id="botAvatar" class="graph-logo">
+      <span>ZeroStar Activity</span>
+      <span class="live-dot"></span>
+    </div>
+
+    <div class="graph-modes">
+      <button class="mode active" data-mode="servers">Servers</button>
+      <button class="mode" data-mode="users">Users</button>
+    </div>
+  </div>
+
+  <canvas id="statsChart"></canvas>
+</section>
+
+<!-- COUNTS -->
+<section class="counts reveal">
+  <div class="count">
+    <span>Total Servers</span>
+    <h2 id="totalServers">—</h2>
+  </div>
+
+  <div class="count">
+    <span>Total Users</span>
+    <h2 id="totalUsers">—</h2>
+  </div>
+</section>
+
+<!-- SUPPORT + OWNER -->
+<section class="bottom-stats reveal">
+
+  <div class="support-box">
+    <img id="serverAvatar">
+    <h3 id="serverName">Support Server</h3>
+    <p>Members: <b id="serverMembers">—</b></p>
+    <p>Online: <b id="serverOnline">—</b></p>
+  </div>
+
+  <div class="people">
+    <div class="person">
+      <img id="ownerAvatar">
+      <h4 id="ownerName">Owner</h4>
+      <span>Owner</span>
+    </div>
+
+    <div class="person">
+      <img id="devAvatar">
+      <h4 id="devName">Developer</h4>
+      <span>Developer</span>
+    </div>
+  </div>
+
+</section>
+
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+<script src="js/stats.js"></script>
+</body>
+</html>

@@ -1,0 +1,224 @@
+/* ================= RESET ================= */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* ================= BASE ================= */
+html, body {
+  background: #000;
+  color: #fff;
+  font-family: 'Inter', sans-serif;
+  overscroll-behavior: none; /* end ke baad bounce band */
+}
+
+/* ================= NAVBAR ================= */
+.navbar {
+  height: 64px;
+  padding: 0 28px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  border-bottom: 1px solid rgba(138,108,255,0.35);
+  background: #000;
+  position: sticky;
+  top: 0;
+  z-index: 100;
+}
+
+.nav-left {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.nav-logo {
+  width: 22px;
+}
+
+.nav-title {
+  font-size: 15px;
+  font-weight: 600;
+  letter-spacing: 1px;
+}
+
+.nav-links a {
+  margin-left: 22px;
+  text-decoration: none;
+  color: #bbb;
+  font-size: 14px;
+  position: relative;
+  padding-bottom: 6px;
+}
+
+.nav-links a::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 0%;
+  height: 2px;
+  background: #8a6cff;
+  transition: 0.3s ease;
+}
+
+.nav-links a:hover::after,
+.nav-links a.active::after {
+  width: 100%;
+}
+
+.nav-links a:hover {
+  color: #fff;
+  text-shadow: 0 0 12px rgba(138,108,255,0.9);
+}
+
+/* About page underline off */
+.no-line::after {
+  display: none !important;
+}
+/* ================= MAIN ================= */
+.tos-container {
+  padding: 110px 10% 80px;
+  min-height: 100vh;
+}
+
+/* ================= TITLE ================= */
+.tos-container h1 {
+  text-align: center;
+  font-size: 36px;
+  font-weight: 700;
+  margin-bottom: 6px;
+  text-shadow:
+    0 0 6px rgba(160,120,255,0.5),
+    0 0 14px rgba(160,120,255,0.8);
+}
+
+.updated {
+  text-align: center;
+  font-size: 13px;
+  color: #aaa;
+  margin-bottom: 36px;
+}
+
+/* ================= CONTENT ================= */
+.tos-box {
+  max-width: 900px;
+  margin: 0 auto;
+}
+
+.tos-box section h2 {
+  font-size: 18px;
+  font-weight: 600;
+  margin-bottom: 10px;
+}
+
+.tos-box section p,
+.tos-box section li {
+  font-size: 14px;
+  line-height: 1.75;
+  color: #d0d0d0;
+}
+
+.tos-box ul {
+  padding-left: 18px;
+  margin-top: 6px;
+}
+
+/* ================= DIVIDER ================= */
+.divider {
+  height: 1px;
+  background: linear-gradient(
+    90deg,
+    transparent,
+    rgba(160,120,255,0.6),
+    transparent
+  );
+  margin: 28px 0;
+}
+
+/* ================= SPECIAL TEXT ================= */
+.uppercase {
+  text-transform: uppercase;
+  font-size: 13px;
+  letter-spacing: 0.5px;
+}
+
+/* ================= LINKS ================= */
+.link {
+  color: #8a6cff;
+  text-decoration: none;
+}
+
+.link:hover {
+  text-decoration: underline;
+}
+
+/* ================================================= */
+/* ================= TABLET ======================== */
+/* ================================================= */
+@media (max-width: 1024px) {
+  .tos-container {
+    padding: 105px 8% 70px;
+  }
+
+  .tos-container h1 {
+    font-size: 32px;
+  }
+
+  .tos-box section h2 {
+    font-size: 17px;
+  }
+}
+
+/* ================================================= */
+/* ================= MOBILE ========================= */
+/* ================================================= */
+@media (max-width: 768px) {
+  .navbar {
+    padding: 0 20px;
+  }
+
+  .nav-links {
+    display: none; /* mobile clean look */
+  }
+
+  .tos-container {
+    padding: 95px 6% 60px;
+  }
+
+  .tos-container h1 {
+    font-size: 26px;
+  }
+
+  .updated {
+    font-size: 12px;
+  }
+
+  .tos-box section h2 {
+    font-size: 16px;
+  }
+
+  .tos-box section p,
+  .tos-box section li {
+    font-size: 13px;
+    line-height: 1.7;
+  }
+}
+
+/* ================================================= */
+/* ================= SMALL PHONES ================== */
+/* ================================================= */
+@media (max-width: 480px) {
+  .tos-container {
+    padding: 90px 5% 50px;
+  }
+
+  .tos-container h1 {
+    font-size: 22px;
+  }
+
+  .divider {
+    margin: 22px 0;
+  }
+}

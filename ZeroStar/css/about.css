@@ -1,0 +1,369 @@
+/* ================= RESET ================= */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html, body {
+  background: #000;
+  color: #fff;
+  font-family: 'Inter', sans-serif;
+  scroll-behavior: smooth;
+}
+
+/* ================= NAVBAR ================= */
+.navbar {
+  height: 64px;
+  padding: 0 28px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  border-bottom: 1px solid rgba(138,108,255,0.35);
+  background: #000;
+  position: sticky;
+  top: 0;
+  z-index: 100;
+}
+
+.nav-left {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.nav-logo {
+  width: 22px;
+}
+
+.nav-title {
+  font-size: 15px;
+  font-weight: 600;
+  letter-spacing: 1px;
+}
+
+.nav-links a {
+  margin-left: 22px;
+  text-decoration: none;
+  color: #bbb;
+  font-size: 14px;
+  position: relative;
+  padding-bottom: 6px;
+}
+
+.nav-links a::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 0%;
+  height: 2px;
+  background: #8a6cff;
+  transition: 0.3s ease;
+}
+
+.nav-links a:hover::after,
+.nav-links a.active::after {
+  width: 100%;
+}
+
+.nav-links a:hover {
+  color: #fff;
+  text-shadow: 0 0 12px rgba(138,108,255,0.9);
+}
+
+/* About page underline off */
+.no-line::after {
+  display: none !important;
+}
+
+/* ================= PAGE TITLE ================= */
+.page-title {
+  max-width: 1100px;
+  margin: auto;
+  padding: 80px 20px 60px;
+  text-align: center;
+}
+
+.page-title h1 {
+  font-size: 42px;
+  margin-bottom: 14px;
+}
+
+.page-title p {
+  color: #bbb;
+  font-size: 16px;
+}
+
+/* ================= FEATURES ================= */
+.features {
+  max-width: 1200px;
+  margin: auto;
+  padding: 40px 20px 120px;
+  display: flex;
+  flex-direction: column;
+  gap: 120px;
+}
+
+.feature {
+  display: flex;
+  align-items: center;
+  gap: 60px;
+  position: relative;
+}
+
+.feature::before {
+  content: "";
+  position: absolute;
+  top: -60px;
+  left: 0;
+  width: 100%;
+  height: 1px;
+  background: linear-gradient(90deg, transparent, #8a6cff, transparent);
+}
+
+.feature.left {
+  flex-direction: row;
+}
+
+.feature.right {
+  flex-direction: row-reverse;
+}
+
+.feature img {
+  width: 48%;
+  border-radius: 14px;
+}
+
+.feature-text {
+  width: 52%;
+}
+
+/* ===== AUTO GLOW WHEN SECTION APPEARS ===== */
+.feature-text.auto-glow {
+  text-shadow:
+    0 0 14px rgba(138,108,255,0.6),
+    0 0 34px rgba(138,108,255,0.9);
+}
+
+.feature-text h2 {
+  font-size: 28px;
+  margin-bottom: 12px;
+}
+
+.feature-text p {
+  color: #ccc;
+  font-size: 15px;
+  line-height: 1.6;
+  margin-bottom: 22px;
+}
+
+/* ================= BUTTON ================= */
+/* INVITE BUTTON BASE */
+.invite-btn {
+  display: inline-block;
+  margin-top: 16px;
+  padding: 12px 34px;
+  border-radius: 6px;
+  background: #8a6cff;
+  color: #fff;
+  font-weight: 600;
+  font-size: 14px;
+  text-decoration: none;
+  opacity: 0;
+  transform: translateY(10px);
+  transition: 0.35s ease;
+  pointer-events: none;
+}
+
+/* SHOW WHEN SECTION ACTIVE */
+.feature:hover .invite-btn,
+.feature.active .invite-btn {
+  opacity: 1;
+  transform: translateY(0);
+  pointer-events: auto;
+}
+
+/* HOVER GLOW */
+.invite-btn:hover {
+  box-shadow:
+    0 0 14px rgba(138,108,255,0.8),
+    0 0 36px rgba(138,108,255,1);
+  transform: translateY(-2px);
+}
+
+
+/* glow when hover / tap */
+.feature-text button:hover,
+.feature-text button:focus-visible,
+.feature-text button:active {
+  box-shadow:
+    0 0 14px rgba(138,108,255,0.7),
+    0 0 36px rgba(138,108,255,1),
+    0 0 60px rgba(138,108,255,1);
+  transform: translateY(-2px);
+  outline: none;
+}
+
+/* ================= SCROLL REVEAL ================= */
+.reveal {
+  opacity: 0;
+  transform: translateY(40px);
+  transition: 0.7s ease;
+}
+
+.reveal.show {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.reveal-btn {
+  opacity: 0;
+  transform: scale(0.9);
+  transition: 0.5s ease;
+}
+
+.reveal.show .reveal-btn {
+  opacity: 1;
+  transform: scale(1);
+}
+
+
+/* ================= TRUSTED ================= */
+.trusted {
+  width: 100%;
+  padding: 100px 20px 120px;
+  text-align: center;
+  border-top: 1px solid rgba(138,108,255,0.35);
+}
+
+.trusted h2 {
+  font-size: 28px;
+  margin-bottom: 45px;
+  letter-spacing: 0.6px;
+}
+
+/* LOGO ROW */
+.trusted-logos {
+  max-width: 900px;
+  margin: auto;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 60px;
+  flex-wrap: wrap;
+}
+
+/* REMOVE BOX COMPLETELY */
+.trusted-logos a {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0;              /* ❌ no box */
+  border: none;
+  background: none;
+}
+
+/* PNG / SVG LOGO */
+.trusted-logos img {
+  max-height: 38px;
+  max-width: 130px;
+  width: auto;
+  height: auto;
+  object-fit: contain;
+  opacity: 0.85;
+  transition: 0.35s ease;
+}
+
+/* 🔥 PURE LOGO GLOW */
+.trusted-logos a:hover img,
+.trusted-logos a:active img {
+  opacity: 1;
+  filter:
+    drop-shadow(0 0 10px rgba(138,108,255,0.8))
+    drop-shadow(0 0 28px rgba(138,108,255,1));
+  transform: scale(1.06);
+}
+
+
+/* ================= TABLET ================= */
+@media (max-width: 900px) {
+
+  .page-title h1 {
+    font-size: 34px;
+  }
+
+  .features {
+    gap: 90px;
+  }
+
+  .feature {
+    flex-direction: column !important;
+    text-align: center;
+    gap: 36px;
+  }
+
+  .feature img {
+    width: 100%;
+    max-width: 520px;
+  }
+
+  .feature-text {
+    width: 100%;
+  }
+}
+
+/* ================= MOBILE ================= */
+@media (max-width: 600px) {
+
+  .navbar {
+    padding: 0 16px;
+  }
+
+  .nav-links a {
+    margin-left: 14px;
+    font-size: 13px;
+  }
+
+  .page-title {
+    padding: 60px 16px 40px;
+  }
+
+  .page-title h1 {
+    font-size: 28px;
+  }
+
+  .page-title p {
+    font-size: 14px;
+  }
+
+  .features {
+    gap: 70px;
+    padding-bottom: 80px;
+  }
+
+  .feature-text h2 {
+    font-size: 22px;
+  }
+
+  .feature-text p {
+    font-size: 14px;
+  }
+
+  .feature-text button {
+    width: 100%;
+    padding: 14px 0;
+  }
+
+  .trusted {
+    padding: 60px 16px 70px;
+  }
+
+  .trusted-logos {
+    gap: 10px;
+  }
+
+  .trusted-logos img {
+    height: 25px;
+  }
+} 

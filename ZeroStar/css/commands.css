@@ -1,0 +1,190 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html, body {
+  background: #000;
+  color: #fff;
+  font-family: 'Inter', sans-serif;
+}
+
+/* NAVBAR */
+.navbar {
+  height: 64px;
+  padding: 0 28px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  border-bottom: 1px solid rgba(138,108,255,0.35);
+  background: #000;
+  position: sticky;
+  top: 0;
+  z-index: 100;
+}
+
+.nav-left {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.nav-logo {
+  width: 22px;
+}
+
+.nav-title {
+  font-size: 15px;
+  font-weight: 600;
+  letter-spacing: 1px;
+}
+
+.nav-links a {
+  margin-left: 22px;
+  text-decoration: none;
+  color: #bbb;
+  font-size: 14px;
+  position: relative;
+  padding-bottom: 6px;
+}
+
+.nav-links a::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 0%;
+  height: 2px;
+  background: #8a6cff;
+  transition: 0.3s ease;
+}
+
+.nav-links a:hover::after,
+.nav-links a.active::after {
+  width: 100%;
+}
+
+.nav-links a:hover {
+  color: #fff;
+  text-shadow: 0 0 12px rgba(138,108,255,0.9);
+}
+
+/* About page underline off */
+.no-line::after {
+  display: none !important;
+}
+
+
+/* CONTAINER */
+.cmd-container {
+  padding: 120px 8%;
+}
+
+.cmd-container h1 {
+  font-size: 42px;
+  margin-bottom: 40px;
+  text-shadow: 0 0 20px rgba(160,90,255,0.6);
+}
+
+/* COMMAND LIST */
+.cmd-list {
+  border-top: 1px solid rgba(180,100,255,0.2);
+}
+
+.cmd {
+  display: grid;
+  grid-template-columns: 180px 1fr;
+  padding: 16px;
+  border-bottom: 1px solid rgba(180,100,255,0.2);
+  cursor: pointer;
+  position: relative;
+  transition: background 0.3s ease;
+}
+
+.cmd:hover {
+  background: rgba(180,100,255,0.08);
+}
+
+/* COMMAND NAME */
+.cmd-name {
+  font-weight: 700;
+  color: #cfaaff;
+  text-shadow: 0 0 8px rgba(180,100,255,0.8);
+}
+
+/* DESCRIPTION */
+.cmd-desc {
+  color: #cfcfcf;
+}
+
+/* GLITCH GLOW */
+.cmd:hover::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  border: 1px solid rgba(180,100,255,0.6);
+  box-shadow: 0 0 18px rgba(180,100,255,0.8);
+  pointer-events: none;
+}
+
+/* RESPONSIVE */
+@media (max-width: 768px) {
+  .cmd {
+    grid-template-columns: 1fr;
+    gap: 6px;
+  }
+
+  .cmd-name {
+    font-size: 15px;
+  }
+}
+
+/* ================= MENU BUTTON ================= */
+.menu-btn {
+  display: none;
+  font-size: 26px;
+  cursor: pointer;
+  user-select: none;
+}
+
+/* ================= TABLET + MOBILE ================= */
+@media (max-width: 1024px) {
+  .menu-btn {
+    display: block;
+  }
+
+  .nav-links {
+    position: absolute;
+    top: 70px;
+    right: 0;
+    width: 220px;
+    background: #000;
+    border-left: 1px solid rgba(255,255,255,0.08);
+    border-bottom: 1px solid rgba(255,255,255,0.08);
+    display: none;
+    flex-direction: column;
+    padding: 10px 0;
+    z-index: 9;
+  }
+
+  .nav-links a {
+    margin: 0;
+    padding: 12px 20px;
+    font-size: 14px;
+  }
+
+  .nav-links.show {
+    display: flex;
+  }
+}
+
+/* SMALL PHONES */
+@media (max-width: 480px) {
+  .nav-links {
+    width: 100%;
+    left: 0;
+    right: 0;
+  }
+}
+
